@@ -18,3 +18,10 @@ export interface SignupFormData {
   email: string,
   password: string,
 }
+
+export interface avatarResponse {
+  avatar: string;
+}
+export interface BioFormData {
+  bio: string;
+}

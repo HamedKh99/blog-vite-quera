@@ -10,7 +10,7 @@ export default function SignupForm() {
   async function onSubmit(data: SignupFormData) {
     try { 
       await auth.signup(data);
-      navigate("/");
+      navigate("/profile");
     } catch(e) {
       console.log(e)
     }
