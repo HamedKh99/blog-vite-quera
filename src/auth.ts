@@ -17,6 +17,7 @@ const auth = {
       const responseData = response.data as LoginResponse;
       localStorage.setItem("accessToken", responseData.tokens.access);
       localStorage.setItem("refreshToken", responseData.tokens.refresh);
+      localStorage.setItem("username", responseData.username);
     } catch(e) {
       throw e;
     }
@@ -28,6 +29,7 @@ const auth = {
       const responseData = response.data as LoginResponse;
       localStorage.setItem("accessToken", responseData.tokens.access);
       localStorage.setItem("refreshToken", responseData.tokens.refresh);
+      localStorage.setItem("username", responseData.username);
     } catch(e) {
       throw(e)
     }
@@ -36,6 +38,7 @@ const auth = {
   logout() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
+    localStorage.removeItem("username");
     router.navigate("/login")
   }
 }

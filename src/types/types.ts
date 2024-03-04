@@ -43,3 +43,18 @@ export interface ProfileLoaderData {
   bio: string;
   avatar: string;
 }
+
+export interface Post {
+  id: number;
+  author: string;
+  categories: string[];
+  likes: string[];
+  title: string;
+  body: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface HomeLoaderData {
+  posts: Post[];
+}
