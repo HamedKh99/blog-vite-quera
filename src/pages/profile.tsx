@@ -1,15 +1,21 @@
-import AvatarSelector from "../components/profile/avatar-selector"
+import { useLoaderData } from "react-router-dom";
+import AvatarSelector from "../components/profile/avatar-selector";
 import BioForm from "../components/profile/bio-form";
+import { ProfileLoaderData } from "../types/types";
 
 export default function Profile() {
+  const data = useLoaderData();
+
+  const defaultAvatar = (data as ProfileLoaderData).avatar ? (data as ProfileLoaderData).avatar.replace("5173", "8000") : "";
+
   return (
-    <div className="bg-white w-3/4 border border-solid border-black rounded p-4 shadow-md">
+    <div className="bg-white w-3/4 border border-solid border-black p-4 shadow-md rounded">
       <h1 className="text-3xl text-blue-700">اطلاعات کاربری</h1>
 
       <div className="flex pt-8 h-64">
-        <AvatarSelector />
+        <AvatarSelector defaultAvatar={defaultAvatar} />
 
-        <BioForm />
+        <BioForm defaultBio={(data as ProfileLoaderData).bio} />
       </div>
     </div>
   );

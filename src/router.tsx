@@ -6,6 +6,7 @@ import homeLoader from "./pages/loaders/home-loader";
 import authLoader from "./pages/loaders/auth-loader";
 import Signup from "./pages/signup";
 import Profile from "./pages/profile";
+import profileLoader from "./pages/loaders/profile-loader";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
-        loader: homeLoader,
+        loader: profileLoader,
       }
     ],
   },

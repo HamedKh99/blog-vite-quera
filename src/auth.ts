@@ -1,5 +1,6 @@
 import api from "./api/api";
 import { LoginFormData, LoginResponse, SignupFormData } from "./types/types";
+import router from "./router";
 
 const auth = {
   isAuthenticated() {
@@ -30,6 +31,12 @@ const auth = {
     } catch(e) {
       throw(e)
     }
+  },
+
+  logout() {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    router.navigate("/login")
   }
 }
 
